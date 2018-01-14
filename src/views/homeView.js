@@ -93,23 +93,29 @@ class HomeView extends Component {
     this.fetchData(this.state.name, parseInt(page, 10));
   }
 
+  checkIfCharacterIsBookmarked(characters, character) {
+    for (let i = 0; i < characters.length; i++) {
+      if (characters[i].id === character.id) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   bookmarkCharacter(character) {
     let bookmarkedCharacters = this.state.bookmarkedCharacters,
       bookmarkMessage,
-      bookmarkType;
+      bookmarkType,
+      alreadyBookmarked = this.checkIfCharacterIsBookmarked(bookmarkedCharacters, character);
 
-    if(bookmarkedCharacters.length < 1) {
+    if(alreadyBookmarked >= 0){
+      bookmarkedCharacters.splice(alreadyBookmarked, 1);
+      bookmarkMessage = 'Character removed from bookmarks.';
+      bookmarkType = 'warning';
+    } else {
       bookmarkedCharacters.push(character);
       bookmarkMessage = 'Character bookmarked. Clear search field to see it.';
       bookmarkType = 'success';
-    } else {
-      for(let i = 0; i < bookmarkedCharacters.length; i++) {
-        if(bookmarkedCharacters[i].id === character.id) {
-          bookmarkedCharacters.splice(i, 1);
-          bookmarkMessage = 'Character removed from bookmarks.';
-          bookmarkType = 'warning';
-        }
-      }
     }
 
     localStorage.setItem('marvelHeroes', JSON.stringify(bookmarkedCharacters));
