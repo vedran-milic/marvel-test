@@ -1,0 +1,23 @@
+.search-bar {
+  background: #504a4a url("../../assets/images/space.jpg") center no-repeat;
+  background-size: cover;
+  padding: 3.75rem 0.9375rem;
+  text-align: center; }
+  .search-bar h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1.875rem; }
+  .search-bar input {
+    appearance: none;
+    border-radius: 1.5rem;
+    border: 2px solid #e23636;
+    display: block;
+    font-size: 1rem;
+    height: 3rem;
+    margin: 0 auto;
+    max-width: 100%;
+    outline: 0;
+    padding: 0 1.5rem;
+    text-align: center;
+    width: 20rem; }

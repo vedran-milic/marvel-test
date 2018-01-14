@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+  outline: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.finding-your-heroes {
+  color: $primary-color;
+  display: block;
+  text-align: center;
+  padding: rem-calc(30);
+
+  &::after {
+    animation: spin 1.1s infinite linear;
+    border: 4px solid lighten($primary-color, 30%);
+    border-left-color: $primary-color;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: rem-calc(48);
+    margin: rem-calc(10) auto;
+    width:  rem-calc(48);
+  }
+}

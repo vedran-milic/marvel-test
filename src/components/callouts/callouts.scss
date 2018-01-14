@@ -1,0 +1,35 @@
+@import "../../assets/scss/settings";
+@import "../../assets/scss/foundation-rem-calc";
+
+.callout {
+  max-width: rem-calc(400);
+  padding: rem-calc(15 40 15 15);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+
+  &.success {
+    background-color: $success-color;
+    color: $white;
+  }
+
+  &.warning {
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  .close {
+    background-color: transparent;
+    border: 0;
+    color: $white;
+    font-size: rem-calc(24);
+    height: rem-calc(40);
+    line-height: rem-calc(40);
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    width: rem-calc(40);
+  }
+}

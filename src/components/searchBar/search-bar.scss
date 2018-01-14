@@ -1,0 +1,31 @@
+@import "../../assets/scss/settings";
+@import "../../assets/scss/foundation-rem-calc";
+
+.search-bar {
+  background: $gray url('../../assets/images/space.jpg') center no-repeat;
+  background-size: cover;
+  padding: rem-calc(60 15);
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-size: rem-calc(24);
+    font-weight: 700;
+    margin: rem-calc(0 0 30);
+  }
+
+  input {
+    appearance: none;
+    border-radius: rem-calc(24);
+    border: 2px solid $primary-color;
+    display: block;
+    font-size: rem-calc(16);
+    height: rem-calc(48);
+    margin: 0 auto;
+    max-width: 100%;
+    outline: 0;
+    padding: rem-calc(0 24);
+    text-align: center;
+    width:  rem-calc(320);
+  }
+}

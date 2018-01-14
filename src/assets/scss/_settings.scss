@@ -1,0 +1,21 @@
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  small-desktop: 1024px,
+  desktop: 1200px,
+  large-desktop: 1440px,
+);
+
+// colors
+$primary-color: #e23636;
+$secondary-color: #518cca;
+$tertiary-color: #f78f3f;
+
+$success-color: #1F9E12;
+
+$black: #000;
+$white: #fff;
+$gray: #504a4a;
+
+//fonts
+$body-font-family: 'Roboto';

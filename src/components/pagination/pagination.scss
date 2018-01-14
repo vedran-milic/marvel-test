@@ -1,0 +1,69 @@
+@import "../../assets/scss/foundation-rem-calc";
+@import "../../assets/scss/settings";
+
+.pagination {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: rem-calc(10 0);
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    ul {
+      display: inline-block;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin: rem-calc(0 5);
+
+    &.active a {
+      background-color: $tertiary-color;
+      border-color: $primary-color;
+      color: $white;
+    }
+
+    &.prev,
+    &.next {
+      display: block;
+
+      @media (min-width: #{map_get($breakpoints, mobile)}) {
+        display: inline-block;
+      }
+    }
+
+    &.rest {
+      padding: rem-calc(5 0 0);
+
+      @media (min-width: #{map_get($breakpoints, mobile)}) {
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: rem-calc(5);
+
+        @media (min-width: #{map_get($breakpoints, mobile)}) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  a {
+    border: 1px solid $gray;
+    border-radius: rem-calc(4);
+    cursor: pointer;
+    display: block;
+    font-size: rem-calc(14);
+    padding: rem-calc(12 17);
+
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+}

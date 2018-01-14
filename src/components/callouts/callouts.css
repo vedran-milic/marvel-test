@@ -1,0 +1,25 @@
+.callout {
+  max-width: 25rem;
+  padding: 0.9375rem 2.5rem 0.9375rem 0.9375rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; }
+  .callout.success {
+    background-color: #1F9E12;
+    color: #fff; }
+  .callout.warning {
+    background-color: #e23636;
+    color: #fff; }
+  .callout .close {
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    width: 2.5rem; }
