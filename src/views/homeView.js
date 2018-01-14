@@ -98,14 +98,18 @@ class HomeView extends Component {
       bookmarkMessage,
       bookmarkType;
 
-    if(bookmarkedCharacters.indexOf(character) === -1) {
+    if(bookmarkedCharacters.length < 1) {
       bookmarkedCharacters.push(character);
       bookmarkMessage = 'Character bookmarked. Clear search field to see it.';
       bookmarkType = 'success';
     } else {
-      bookmarkedCharacters.splice(bookmarkedCharacters.indexOf(character), 1);
-      bookmarkMessage = 'Character removed from bookmarks.';
-      bookmarkType = 'warning';
+      for(let i = 0; i < bookmarkedCharacters.length; i++) {
+        if(bookmarkedCharacters[i].id === character.id) {
+          bookmarkedCharacters.splice(i, 1);
+          bookmarkMessage = 'Character removed from bookmarks.';
+          bookmarkType = 'warning';
+        }
+      }
     }
 
     localStorage.setItem('marvelHeroes', JSON.stringify(bookmarkedCharacters));
