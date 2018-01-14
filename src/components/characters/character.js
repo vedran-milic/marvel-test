@@ -1,12 +1,19 @@
 import React from 'react';
 
 export const Character = (props) => {
-  let bookmarkedCharacters;
+  let bookmarkedCharacters,
+    bookmarked;
 
   if(props.bookmarkedCharacters) {
     bookmarkedCharacters = props.bookmarkedCharacters;
   } else {
     bookmarkedCharacters = [];
+  }
+
+  for(let i = 0; i < bookmarkedCharacters.length; i++) {
+    if(bookmarkedCharacters[i].id === props.character.id) {
+      bookmarked = true;
+    }
   }
 
   return(
@@ -17,7 +24,7 @@ export const Character = (props) => {
           backgroundSize: 'cover'
         }}/>
         <h3 className="character-name">{props.character.name}</h3>
-        <button className={bookmarkedCharacters.indexOf(props.character) !== -1 ? 'bookmark active' : 'bookmark'} onClick={() => props.bookmark(props.character)}>★</button>
+        <button className={bookmarked ? 'bookmark active' : 'bookmark'} onClick={() => props.bookmark(props.character)}>★</button>
       </div>
     </li>
   );
